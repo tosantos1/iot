@@ -1,7 +1,7 @@
 # IoT
 
 <div align="center">
-  <img src="image/IoT-curso.jpg" width="250" height="200"/>
+  <img src="image/IoT-curso.jpg" width="250" height="200" border="18px"/>
 </div>
 
 <!-- ************************************* Baadges ********************************************* -->
