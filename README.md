@@ -19,7 +19,7 @@
 
 <h2>🔥 Sobre os Estudos</h2>
 
-<p> Nesse repositório vou adicionar exercícios das listas propostos pelo docente do curso. Além de adicionar novidades sobre as tecnologias que serão ministradas para os discentes. </p>
+<p> Nesse repositório vou adicionar exercícios das listas propostos pelo docente do curso. Além disso, vou adicionar novidades sobre as tecnologias que serão ministradas para os discentes. </p>
 
 ---
 
