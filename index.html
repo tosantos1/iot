@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="image/favicon.png"/>
+  <link rel="icon" type="image/png" href="image/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
   <title>IoT</title>
 </head>
+
 <body>
   <header>
     <h1>
@@ -20,16 +23,18 @@
     </h1>
   </header>
   <main>
-    <p id = result>
+    <p id=result>
       Resultado
     </p>
-    
-    <img src="/image/Loff.png" alt="" id =luz>
-    
+
+    <img src="/image/Loff.png" alt="" id=luz>
+
     <div class="btns">
-      <button type= “button” onclick="document.getElementById('luz').src='/image/Lon.png'">Liga</button>
-      <button type= “button” onclick="document.getElementById('luz').src='/image/Loff.png'">Desliga</button>
+      <button type=“button” onclick=Ligar()>Liga</button>
+      <button type=“button” onclick=Apagar()>Desliga</button>
     </div>
   </main>
+  <script src="script.js"></script>
 </body>
+
 </html>
