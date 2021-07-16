@@ -30,12 +30,15 @@
     <img src="/image/Loff.png" alt="Lâmpada" id=luz>
 
     <div class="btns">
-      <button type=“button” onclick=onOff()>Liga</button>
-      <button type=“button” onclick=Apagar()>Desliga</button>
-      <button type=“button” onclick=myTimer()>
-        <p id="demo"></p>
+      <button id="btn_ligar" type=“button” onclick=Ligar()>Liga</button>
+      <button id="btn_desligar" type=“button” onclick=Apagar()>Desliga</button>
+      <button type=“button”>
+        <p id="time"></p>
       </button>
     </div>
+    <iframe width="450" height="260" style="border: 1px solid #C53030; border-radius: 12px;"
+      src="https://thingspeak.com/channels/1446589/charts/2?bgcolor=%23F7FAFC&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
   </main>
   <script src="dash.js"></script>
 </body>
