@@ -21,8 +21,49 @@ header {
   padding: 32px 42px;
 }
 header h1 {
+  margin-bottom: 16px;
   color: #F7FAFC;
 }
+nav a {
+  border: 1px solid red;
+  margin: 0 8px;
+
+  text-decoration: none;
+}
+nav a:nth-child(1) {
+  padding: 12px 36px;
+
+  font-weight: 500;
+	background: #3182CE;
+  border-radius: 8px;
+	color: #fff;
+
+	cursor: pointer;
+	border: 0;
+
+  transitions: filter 0.2s;
+}
+nav a:nth-child(1):hover{
+  filter: brightness(0.9);
+}
+
+nav a:nth-child(2) {
+  padding: 12px 28px;
+
+  font-weight: 500;
+	background: #3182CE;
+  border-radius: 8px;
+	color: #fff;
+
+	cursor: pointer;
+	border: 0;
+  
+  transitions: filter 0.2s;
+}
+nav a:nth-child(2):hover{
+  filter: brightness(0.9);
+}
+
 main{
   margin: 0 auto;
 
