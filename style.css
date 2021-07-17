@@ -24,8 +24,15 @@ header h1 {
   margin-bottom: 16px;
   color: #F7FAFC;
 }
+nav {
+  max-width: 1200px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 nav a {
-  border: 1px solid red;
   margin: 0 8px;
 
   text-decoration: none;
@@ -64,10 +71,38 @@ nav a:nth-child(2):hover{
   filter: brightness(0.9);
 }
 
+nav a:nth-child(3) {
+  padding: 12px 28px;
+
+  font-weight: 500;
+	background: #3182CE;
+  border-radius: 8px;
+	color: #fff;
+
+	cursor: pointer;
+	border: 0;
+  
+  transitions: filter 0.2s;
+}
+nav a:nth-child(3):hover{
+  filter: brightness(0.9);
+}
+
+.btn-nav-1 {
+  padding: 24px 36px;
+}
+.btn-nav-2 {
+  padding: 24px 36px;
+}
+
 main{
+  max-width: 1200px;
   margin: 0 auto;
 
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #result {
   font-size: 22px;

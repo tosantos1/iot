@@ -24,7 +24,6 @@ header h1 {
   margin-bottom: 16px;
   color: #F7FAFC;
 }
-
 nav a {
   border: 1px solid red;
   margin: 0 8px;
@@ -88,7 +87,6 @@ nav a:nth-child(3):hover{
 .btn-nav-2 {
   padding: 24px 36px;
 }
-
 
 main{
   margin: 0 auto;
