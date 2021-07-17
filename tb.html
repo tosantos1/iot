@@ -39,10 +39,9 @@
     <img src="/image/Loff.png" alt="Lâmpada" id=luz>
 
     <!-- Teachable Machine -->
+    <div class="divisor"></div>
 
-    <div style="color: #fff;">Teachable Machine Image Model</div>
-
-    <button type="button" onclick="init()">Start</button>
+    <button id="btn-start" type="button" onclick="init()">Start</button>
 
     <div id="webcam-container"></div>
     <div id="label-container"></div>
@@ -51,11 +50,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
     <script type="text/javascript">
+
+      var valuePredict
+      var classPredict
+
       // More API functions here:
       // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
       // the link to your model provided by Teachable Machine export panel
-      const URL = "https://teachablemachine.withgoogle.com/models/07OOyIAWm/";
+      const URL = "https://teachablemachine.withgoogle.com/models/n_8QtPgDL/";
 
       let model, webcam, labelContainer, maxPredictions;
 
@@ -100,6 +103,20 @@
           const classPrediction =
             prediction[i].className + ": " + prediction[i].probability.toFixed(2);
           labelContainer.childNodes[i].innerHTML = classPrediction;
+          valuePredict = prediction[i].probability.toFixed(2)
+          classPredict = prediction[i].className
+
+          turnLight(classPredict, valuePredict)
+        }
+      }
+
+      function turnLight(type, value) {
+        if (type === "Close" && parseFloat(value) > 0.5) {
+          document.getElementById("luz").src = "/image/Loff.png"
+        } else if (type === "Tesoura" && parseFloat(value) > 0.5) {
+          document.getElementById("luz").src = "/image/Lon.png"
+        } else {
+          console.log("None")
         }
       }
 
@@ -108,7 +125,6 @@
 
 
   </main>
-  <script src="script.js"></script>
 </body>
 
 </html>
