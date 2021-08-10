@@ -40,11 +40,20 @@
 
     <!-- Teachable Machine -->
     <div class="divisor"></div>
+    <div class="tempo-tempo">
+      <p id="time"></p>
+
+    </div>
+
 
     <button id="btn-start" type="button" onclick="init()">Start</button>
 
     <div id="webcam-container"></div>
     <div id="label-container"></div>
+
+    <iframe width="450" height="260" style="border: 1px solid #cccccc;"
+      src="https://thingspeak.com/channels/1463921/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
@@ -119,6 +128,28 @@
           console.log("None")
         }
       }
+
+      setInterval(myTimer, 1);
+
+      function myTimer() {
+        const d = new Date();
+        document.getElementById("time").innerHTML = d.toLocaleTimeString();
+
+        sendToServer(myTimer)
+      }
+
+      function sendToServer(myTimer) {
+        const http = new XMLHttpRequest()
+
+        http.open("GET", "https://api.thingspeak.com/update?api_key=YRSWQVKO6O1WJBEW&field1=0" + myTimer)
+
+        http.send()
+
+        http.onload = setLuxText(http.responseText + " " + myTimer)
+
+      }
+
+
 
     </script>
 

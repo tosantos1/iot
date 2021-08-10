@@ -27,7 +27,7 @@ sendToServer(contador)
 */
 
 
-setInterval(myTimer, 1000);
+setInterval(myTimer, 1);
 
 function myTimer() {
   const d = new Date();
