@@ -67,7 +67,7 @@
       // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
       // the link to your model provided by Teachable Machine export panel
-      const URL = "https://teachablemachine.withgoogle.com/models/5T7vaf1uV/";
+      const URL = "https://teachablemachine.1.com/models/5T7vaf1uV/";
 
       let model, webcam, labelContainer, maxPredictions;
 
@@ -120,34 +120,27 @@
       }
 
       function turnLight(type, value) {
-        if (type === "Close" && parseFloat(value) > 0.7) {
+        if (type === "Close" && parseFloat(value) > 0.5) {
           document.getElementById("luz").src = "/image/Loff.png"
-        } else if (type === "Tesoura" && parseFloat(value) > 0.7) {
+        } else if (type === "Tesoura" && parseFloat(value) > 0.5) {
           document.getElementById("luz").src = "/image/Lon.png"
-        } else if (type === "Nenhum" && parseFloat(value) > 0.7) {
+        } else if (type === "Nenhum" && parseFloat(value) > 0.5) {
           document.getElementById("luz").src = "/image/Loff.png"
         } else {
           console.log("None")
         }
       }
 
-      setInterval(myTimer, 1);
 
-      function myTimer() {
-        const d = new Date();
-        document.getElementById("time").innerHTML = d.toLocaleTimeString();
 
-        sendToServer(myTimer)
-      }
-
-      function sendToServer(myTimer) {
+      function sendToServer(turnLight) {
         const http = new XMLHttpRequest()
 
-        http.open("GET", "https://api.thingspeak.com/update?api_key=YRSWQVKO6O1WJBEW&field1=0" + myTimer)
+        http.open("GET", "https://api.thingspeak.com/update?api_key=YRSWQVKO6O1WJBEW&field1=0" + turnLight)
 
         http.send()
 
-        http.onload = setLuxText(http.responseText + " " + myTimer)
+        http.onload = setLuxText(http.responseText + " " + turnLight)
 
       }
 
